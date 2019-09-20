@@ -1,21 +1,36 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import ReactDOM from 'react-dom';
+import axios from "react-router-dom";
 
 import Login from "./components/Login";
+import BubblePage from "./components/BubblePage.js";
+import PrivateRoute from "./components/PrivateRoute.js";
+import "./styles.scss";
+
+//import './App.css';
 import "./styles.scss";
 
 function App() {
+
   const [colorList, setColorList] = useState([]);
+
   return (
+
     <Router>
       <div className="App">
+        
         <Route exact path="/" component={Login} />
         {/* 
           Build a PrivateRoute component that will 
-          display BubblePage when you're authenticated 
+          display BubblePage when you're authenticated           
         */}
+      
+        <PrivateRoute  path="/bubblepage" component={BubblePage} />
+
       </div>
     </Router>
+
   );
 }
 
