@@ -2,7 +2,26 @@ import React, {useState} from "react";
 import { axiosWithAuth } from "../axiosWithAuth.js";
 import ReactDOM from 'react-dom';
 import axios from "axios";
-//import '../App.css';
+import styled from 'styled-components';
+import '../App.css';
+import reactbubbles from "../reactbubbles.jpg";
+
+const LoginContainer = styled.div`
+    width: 100%;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12),
+    0 2px 4px rgba(0, 0, 0, 0.24); 
+    background-image: url(${reactbubbles});
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    
+
+`;
+
 
 function Login(props){
 
@@ -31,8 +50,10 @@ function Login(props){
     // make a post request to retrieve a token from the api
     // when you have handled the token, navigate to the BubblePage route
     return (
+      <LoginContainer>
+
         <form className = "login-form" onSubmit = {loginHandler}>
-            <h1>Welcome to the Bubble App!</h1>
+            <h1>Reactive Bubbles!</h1>
 
             <input className = "login-form-input" type = "text"
                    name = "username"
@@ -48,9 +69,11 @@ function Login(props){
                    onChange = {handleChange} 
                    required />
 
-            <button type = "submit">Sign In</button>
+            <button className = "login-button" type = "submit">Sign In</button>
 
         </form>
+
+      </LoginContainer>
     );
 
 }

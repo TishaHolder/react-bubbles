@@ -7,11 +7,11 @@ import styled from 'styled-components';
 
 const LogoutButton = styled.div`
     position: absolute;
-    margin-top: 0px;
+    margin-top: 10px;
     right: 15px;
     text-align: center;
     width: 7%;
-    background: #3c68ae;
+    background: #9933ff;
     color: white;
     font-size: 1rem;
     font-weight: bold;
@@ -20,8 +20,8 @@ const LogoutButton = styled.div`
     outline: none;
     border: none;
     padding: 10px;
-    box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.507);
-    margin: 35px;
+    
+   
 `;
 
 const Bubbles = ({ colors, props }) => {
