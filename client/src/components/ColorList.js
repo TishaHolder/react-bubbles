@@ -56,7 +56,6 @@ const ColorList = ({ colors, updateColors }) => {
 
     }); 
 
-
   };
 
   const saveAdd = e => {
@@ -77,7 +76,6 @@ const ColorList = ({ colors, updateColors }) => {
       console.log(err)
 
     }); 
-
 
   };
 
@@ -124,7 +122,38 @@ const ColorList = ({ colors, updateColors }) => {
         ))}
       </ul>
 
-      
+      {/*ADD FORM*/}
+      <form onSubmit={saveAdd}>
+          <legend>add color</legend>
+          <label>
+            color name:
+            <input
+              onChange={e =>
+                setColorToAdd({ ...colorToAdd, color: e.target.value })
+              }
+              value={colorToAdd.color}
+            />
+          </label>
+          <label>
+            hex code:
+            <input
+              onChange={e =>
+                setColorToAdd({
+                  ...colorToAdd,
+                  code: { hex: e.target.value }
+                })
+              }
+              value={colorToAdd.code.hex}
+            />
+
+          </label>
+
+          <div className="button-row">
+            <button type="submit">add</button>
+            
+          </div>
+        </form>
+
       {editing && (
         <form onSubmit={saveEdit}>
           <legend>edit color</legend>
@@ -162,3 +191,4 @@ const ColorList = ({ colors, updateColors }) => {
 };
 
 export default ColorList;
+

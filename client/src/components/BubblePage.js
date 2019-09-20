@@ -2,10 +2,14 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { axiosWithAuth } from "../axiosWithAuth.js";
 
+
 import Bubbles from "./Bubbles";
 import ColorList from "./ColorList";
 
-const BubblePage = () => {
+
+
+
+const BubblePage = (props) => {
 
   const [colorList, setColorList] = useState([]);
   // fetch your colors data from the server when the component mounts
@@ -27,11 +31,12 @@ const BubblePage = () => {
       console.log(err.response);
     })
 
-  }, []); 
+  }, []);   
 
   
   return (
     <>
+      
       <ColorList colors={colorList} updateColors={setColorList} />
       <Bubbles colors={colorList} />
     </>
